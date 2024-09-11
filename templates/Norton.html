@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Summary</title>
+  <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: 'Arial', sans-serif;
+      color: #000000;
+      margin: 10px;
+      padding: 20px;
+      line-height: 1.4;
+    }
+    .container {
+      max-width: 800px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      margin: 0 auto;
+      overflow: hidden;
+      padding: 30px;
+    }
+    .logo {
+        width: 10rem;
+    }
+    .header, .footer {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header p {
+      font-size: 1.1em;
+      color: #555;
+    }
+    .order-details, .shipping-info, .order-summary {
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+    .order-details p, .shipping-info p {
+      margin: 10px 0;
+    }
+    .order-details strong, .shipping-info strong {
+      color: #222;
+    }
+    .order-summary {
+      border-top: 3px solid #007BFF;
+    }
+    .order-summary h2 {
+      font-size: 1.4em;
+      color: #007BFF;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .table-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    .table-row.header {
+      background-color: #007BFF;
+      color: white;
+      font-weight: bold;
+      padding: 10px 0;
+      border-radius: 5px 5px 0 0;
+    }
+    .table-row.item {
+      background-color: #f1f1f1;
+    }
+    .table-row.total {
+      font-weight: bold;
+    }
+    .table-row p {
+      margin: 0;
+      padding: 5px 0;
+      text-align: center;
+    }
+    .footer p {
+      font-size: 1.1rem;
+      color: #777;
+    }
+    .footer p strong {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img class="logo" src="data:image/png;base64,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" alt="Norton Logo">
+    <div class="header">
+      <p>Dear Customer,</p>
+      <p>Thank you for choosing Norton VPN! Your order is being processed, and we will notify you once it's shipped.</p>
+    </div>
+
+    <div class="order-details">
+      <p><strong>Order Number:</strong> #783743</p>
+      <p><strong>Order Placed on:</strong> 5th July 2022</p>
+      <p><strong>Total Amount Paid:</strong> $199.99</p>
+      <p><strong>Shipping Method:</strong> Standard</p>
+    </div>
+
+    <div class="shipping-info">
+      <p><strong>Shipping Address:</strong></p>
+      <p>Rachel Green<br>
+      Oak Lane<br>
+      Florida (USA) - 33101</p>
+
+      <p><strong>Shipped By:</strong> DHL<br> Standard Delivery</p>
+    </div>
+
+    <div class="order-summary">
+      <h2>Order Summary</h2>
+      <div class="table-row header">
+        <p>Description</p>
+        <p>Qty</p>
+        <p>Amount</p>
+      </div>
+      <div class="table-row item">
+        <p>Norton VPN Subscription - 1 Year</p>
+        <p>1</p>
+        <p>$179.99</p>
+      </div>
+      <div class="table-row item">
+        <p>Router Configuration Fee</p>
+        <p>1</p>
+        <p>$10.00</p>
+      </div>
+      <div class="table-row total">
+        <p>Subtotal</p>
+        <p></p>
+        <p>$189.99</p>
+      </div>
+      <div class="table-row total">
+        <p>Shipping Cost</p>
+        <p></p>
+        <p>$10.00</p>
+      </div>
+      <div class="table-row total">
+        <p>Sale Tax</p>
+        <p></p>
+        <p>$0.00</p>
+      </div>
+      <div class="table-row total">
+        <p>Total</p>
+        <p></p>
+        <p>$199.99</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p><i>Thanks & Regards,<br>Norton VPN Billing Team</i></p>
+      <p><strong>Contact Us: 1 800 555 1234</strong></p>
+    </div>
+  </div>
+</body>
+</html>

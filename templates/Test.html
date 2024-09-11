@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .email-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+    .header {  
+      margin: 20px 10px;
+      padding: 10px;
+      flex: auto;
+      display: inline;
+    }
+    .footer {
+      border-radius: 0 0 8px 8px;
+    }
+    .img{
+        width: 50%;
+        float: left;
+        padding: 20px 0 0 0;
+    }
+    .imp{
+        overflow: hidden;
+        padding-left: 100px;
+        font-size: small;
+        line-height: 20%;
+        font-size: small;
+    }
+    .content {
+      padding: 2px;
+    }
+    .table-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #007bff;
+      color: white;
+    }
+    .total-row td {
+      font-weight: bold;
+    }
+    .address {
+        font-size: small;
+        font-weight: 200;
+        padding: 4px;
+        line-height: 50%;
+      margin: 10px;
+      max-width: 300px;
+      font-family: Arial, sans-serif;
+    }
+    .bold{
+        font-weight: 600;
+    }
+    .note{
+        padding: 4px;
+        margin: 10px;
+        font-size: small;
+    }
+    .ci{
+        width: 5%;
+    }
+    .cta{
+        padding: 1px;
+        margin-bottom: 30px;
+        text-align: center;
+        background-color: #FFBB70;
+    }
+    .thanks{
+        margin: 10px;
+        padding: 10px;
+        color: #FF8A08;
+        text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="header">
+      <!-- <img class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Norton-logo-2021.svg/1280px-Norton-logo-2021.svg.png" alt="Company Logo"> -->
+        <div class="imp">
+            <p class="bold">Renewal Invoice</p>
+            <p>4601 Penn Avenue</p>
+            <p>Bill Date: May 31, 2024</p>
+            <p class="bold">HelpDesk Number:  </p>
+            <p class="bold" id="helpdeskNum">############</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="address">
+            <p>Norton, Inc.</p>
+            <p>Invoice Number: <p id="invoiceNum">##########</p></p>
+            <p>Toll-Free Helpline: <p id="tollFreeNum">############</p></p>
+        </div>
+        <div class="note">
+            <p class="bold">Note*: </p>
+        <p>We are grateful for your ongoing assistance with Geek Squad. Due to Geek Squad's excellent reputation in the business, we will not be charging our customers for auto-renewal this year out of courtesy.</p>
+        <p>If this transaction will reflect on your bank statement within 24 to 48 hours, please call ########## , if you have any issue with this transaction,</p>
+        </div>
+        
+        <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Description</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Norton™ 360 with LifeLock™ Select for Family</td>
+                  <td>2 users 5 devices 100GB</td>
+                  <td>$274.00</td>
+                  <td>1</td>
+                  <td>$274.00</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>Price</th>
+                  </tr>
+                  <tr>
+                    <td>Payment Method: Auto-debit</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Total: $274.00</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Balance Due: $0.00</td>
+                  </tr>
+                <tr class="total-row">
+                  <td colspan="4">Total</td>
+                  <td>$274.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="note">
+            <p>This membership will automatically renew every year, up to 24 hours before the end of the subscription period, unless you turn off auto renewal.</p>
+                <p>Please use our Helpdesk Number to disable this.</p>
+        </div>
+        <div class="cta">
+            <h2>Helpdesk Number: <p id="helpdeskNum">############</p></h2>
+        </div>
+        <hr>
+        <div class="thanks">
+            <h1>Thank you for your purchase!</h1>
+        </div>
+    </div>
+    <footer>
+      <p>&copy; 2024 Norton, Inc. All rights reserved.</p>
+    </footer>
+</body>
+<script src="../yamraaj.js"></script>
+</html>

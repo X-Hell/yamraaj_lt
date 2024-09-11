@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Summary</title>
+  <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: 'Arial', sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      margin: 0 auto;
+      overflow: hidden;
+      padding: 30px;
+    }
+    .header, .footer {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header p {
+      font-size: 1.1em;
+      color: #555;
+    }
+    .order-details, .shipping-info, .order-summary {
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+    .order-details p, .shipping-info p {
+      margin: 10px 0;
+    }
+    .order-details strong, .shipping-info strong {
+      color: #222;
+    }
+    .order-summary {
+      border-top: 3px solid #007BFF;
+    }
+    .order-summary h2 {
+      font-size: 1.4em;
+      color: #007BFF;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .table-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    .table-row.header {
+      background-color: #007BFF;
+      color: white;
+      font-weight: bold;
+      padding: 10px 0;
+      border-radius: 5px 5px 0 0;
+    }
+    .table-row.item {
+      background-color: #f1f1f1;
+    }
+    .table-row.total {
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    .table-row p {
+      margin: 0;
+      padding: 5px 0;
+      text-align: center;
+    }
+    .footer p {
+      font-size: 0.9em;
+      color: #777;
+    }
+    .footer p strong {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <p>Dear Customer,</p>
+      <p>Thank you for shopping with Amazon! Your order is being processed, and we will notify you once it's shipped.</p>
+    </div>
+
+    <div class="order-details">
+      <p><strong>Order Number:</strong> #4572942</p>
+      <p><strong>Order Placed on:</strong> 25th August 2024</p>
+      <p><strong>Total Amount Paid:</strong> $1499.00</p>
+      <p><strong>Shipping Method:</strong> Standard</p>
+    </div>
+
+    <div class="shipping-info">
+      <p><strong>Shipping Address:</strong></p>
+      <p>Rachel Green<br>
+      Oak Lane<br>
+      Florida (USA) - 33101</p>
+
+      <p><strong>Shipped By:</strong> Amazon Logistics<br> Standard Delivery</p>
+    </div>
+
+    <div class="order-summary">
+      <h2>Order Summary</h2>
+      <div class="table-row header">
+        <p>Description</p>
+        <p>Qty</p>
+        <p>Amount</p>
+      </div>
+      <div class="table-row item">
+        <p>iPhone 15 Pro Max</p>
+        <p>1</p>
+        <p>$1499.00</p>
+      </div>
+      <div class="table-row total">
+        <p>Subtotal</p>
+        <p></p>
+        <p>$1499.00</p>
+      </div>
+      <div class="table-row total">
+        <p>Shipping Cost</p>
+        <p></p>
+        <p>$0.00</p>
+      </div>
+      <div class="table-row total">
+        <p>Sale Tax</p>
+        <p></p>
+        <p>$0.00</p>
+      </div>
+      <div class="table-row total">
+        <p>Total</p>
+        <p></p>
+        <p>$1499.00</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p><i>Thanks & Regards,<br>Amazon Billing Team</i></p>
+      <p><strong>Contact Us: 1 888 280 4331</strong></p>
+    </div>
+  </div>
+</body>
+</html>
